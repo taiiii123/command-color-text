@@ -28,7 +28,7 @@
 | 引数         | 必須   | デフォルト | 説明 |
 |--------------|--------|------------|------|
 | `--text`     | 必須   | なし       | 表示する文字列（例: "Hello"）。 |
-| `--color`    | 必須   | WHITE      | テキストまたは背景の色を指定します。選択可能な値： `BLACK`, `RED`, `GREEN`, `YELLOW`, `BLUE`, `MAGENTA`, `CYAN`, `WHITE`, `BG_BLACK`, `BG_RED`, `BG_GREEN`, `BG_YELLOW`, `BG_BLUE`, `BG_MAGENTA`, `BG_CYAN`, `BG_WHITE`。 |
+| `--color`    | 任意   | WHITE      | テキストまたは背景の色を指定します。選択可能な値： `BLACK`, `RED`, `GREEN`, `YELLOW`, `BLUE`, `MAGENTA`, `CYAN`, `WHITE`, `BG_BLACK`, `BG_RED`, `BG_GREEN`, `BG_YELLOW`, `BG_BLUE`, `BG_MAGENTA`, `BG_CYAN`, `BG_WHITE`。 |
 | `--line`     | 任意   | `-`        | テキストの左右に挟む装飾文字。 |
 | `--count`    | 任意   | `10`       | 装飾文字の繰り返し回数。 |
 | `--no_line`  | 任意   | `False`    | 装飾文字を左右に表示しない場合、指定します（デフォルトは表示される）。 |

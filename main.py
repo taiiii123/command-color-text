@@ -37,7 +37,7 @@ def main():
     )
     parser.add_argument(
         '--color',
-        required=True,
+        required=False,
         default='WHITE',
         choices=[
             'BLACK', 'RED', 'GREEN', 'YELLOW', 'BLUE', 

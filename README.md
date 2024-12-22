@@ -38,12 +38,12 @@
 
 1. 赤色の文字を表示：
    ```bash
-   python script.py --text="Hello World" --color="RED"
+   python main.py --text="Hello World" --color="RED"
    ```
 
 2. テキストを装飾文字で囲む：
    ```bash
-   python script.py --text="Welcome" --color="BLUE" --line="*" --count=5
+   python main.py --text="Welcome" --color="BLUE" --line="*" --count=5
    ```
    出力：
    ```
@@ -52,7 +52,7 @@
 
 3. 背景色を変更：
    ```bash
-   python script.py --text="Notice" --color="BG_YELLOW"
+   python main.py --text="Notice" --color="BG_YELLOW"
    ```
 
 4. 実行例：
@@ -84,42 +84,3 @@
 | `BG_WHITE`     | (背景) 白 |
 
 ---
-
-## 動作仕組み
-
-### ANSIカラーコード
-
-スクリプトはANSIエスケープコードを使用してテキストに色を適用します。利用可能な色は `color_codes` 辞書で定義されています：
-
-```python
-color_codes = {
-    'BLACK': '\033[30m',
-    'RED': '\033[31m',
-    'GREEN': '\033[32m',
-    'YELLOW': '\033[33m',
-    'BLUE': '\033[34m',
-    'MAGENTA': '\033[35m',
-    'CYAN': '\033[36m',
-    'WHITE': '\033[37m',
-    'BG_BLACK': '\033[40m',
-    'BG_RED': '\033[41m',
-    'BG_GREEN': '\033[42m',
-    'BG_YELLOW': '\033[43m',
-    'BG_BLUE': '\033[44m',
-    'BG_MAGENTA': '\033[45m',
-    'BG_CYAN': '\033[46m',
-    'BG_WHITE': '\033[47m',
-    'RESET': '\033[0m'
-}
-```
-
-### 関数
-
-`print_colored_text` 関数は装飾付きのテキストを生成して出力します：
-
-```python
-def print_colored_text(text, color, line, count):
-    color_code = color_codes.get(color.upper(), color_codes['RESET'])
-    print(f"{color_code}{line * count} {text} {line * count}{color_codes['RESET']}")
-```
-

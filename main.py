@@ -21,9 +21,12 @@ color_codes = {
     'RESET': '\033[0m'
 }
 
-def print_colored_text(text, color, line, count):
+def print_colored_text(text, color, line, count, no_line):
     color_code = color_codes.get(color.upper(), color_codes['RESET'])
-    print(f"{color_code}{line * count} {text} {line * count}{color_codes['RESET']}")
+    if not no_line:  # 修正: !isNoLine -> not no_line
+        print(f"{color_code}{line * count} {text} {line * count}{color_codes['RESET']}")
+    else:
+        print(f"{color_code}{text}{color_codes['RESET']}")
 
 def main():
     parser = argparse.ArgumentParser(
@@ -61,11 +64,16 @@ def main():
         default=10,
         help='装飾文字の繰り返し回数（デフォルトは 10）。'
     )
+    parser.add_argument(
+        '--no_line',
+        action='store_true',  # --no_lineが指定された場合はTrue
+        help='左右の文字を表示するか（デフォルトは表示される）。'
+    )
 
     args = parser.parse_args()
     
     # 色付きで文字を表示
-    print_colored_text(args.text, args.color, args.line, args.count)
+    print_colored_text(args.text, args.color, args.line, args.count, args.no_line)
 
 if __name__ == '__main__':
     main()

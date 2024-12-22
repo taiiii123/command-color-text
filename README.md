@@ -31,6 +31,7 @@
 | `--color`    | 必須   | WHITE      | テキストまたは背景の色を指定します。選択可能な値： `BLACK`, `RED`, `GREEN`, `YELLOW`, `BLUE`, `MAGENTA`, `CYAN`, `WHITE`, `BG_BLACK`, `BG_RED`, `BG_GREEN`, `BG_YELLOW`, `BG_BLUE`, `BG_MAGENTA`, `BG_CYAN`, `BG_WHITE`。 |
 | `--line`     | 任意   | `-`        | テキストの左右に挟む装飾文字。 |
 | `--count`    | 任意   | `10`       | 装飾文字の繰り返し回数。 |
+| `--no_line`  | 任意   | `False`    | 装飾文字を左右に表示しない場合、指定します（デフォルトは表示される）。 |
 
 ---
 
@@ -53,6 +54,15 @@
 3. 背景色を変更：
    ```bash
    python main.py --text="Notice" --color="BG_YELLOW"
+   ```
+
+4. 左右の装飾文字を表示しない（--no_line オプションを使用）：
+   ```bash
+   python script.py --text="No Decoration" --color="GREEN" --no_line
+   ```
+   出力：
+   ```
+   No Decoration
    ```
 
 4. 実行例：

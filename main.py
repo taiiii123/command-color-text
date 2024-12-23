@@ -23,7 +23,7 @@ color_codes = {
 
 def print_colored_text(text, color, line, count, no_line):
     color_code = color_codes.get(color.upper(), color_codes['RESET'])
-    if not no_line:  # 修正: !isNoLine -> not no_line
+    if not no_line:
         print(f"{color_code}{line * count} {text} {line * count}{color_codes['RESET']}")
     else:
         print(f"{color_code}{text}{color_codes['RESET']}")
@@ -66,7 +66,7 @@ def main():
     )
     parser.add_argument(
         '--no_line',
-        action='store_true',  # --no_lineが指定された場合はTrue
+        action='store_true',
         help='左右の文字を表示するか（デフォルトは表示される）。'
     )
 
